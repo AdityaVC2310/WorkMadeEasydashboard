@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorkMadeEasy</title>
-    <!-- Bootstrap CSS -->
+    <title>WorkMadeEasy Inc.</title>
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -16,9 +16,9 @@
 
         #app {
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
             margin: 50px auto;
-            background-color:rgb(243,235,227);
+            background-color: rgb(243, 235, 227);
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -39,7 +39,8 @@
             width: 250px;
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             text-align: center;
         }
 
@@ -84,16 +85,42 @@
             text-decoration: line-through;
             color: grey;
         }
+
+        /* Calendar Styles */
+        .calendar {
+            margin-top: 20px;
+        }
+
+        .calendar table {
+            width: 100%;
+            background-color: #fff;
+            border-collapse: collapse;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .calendar th {
+            background-color: #f8f9fa;
+        }
+
+        .calendar td.task-day {
+            background-color: #d4edda;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="app" class="container">
-        <!-- Login Page -->
+        
         <div id="loginPage" class="page active">
             <img src="Work.png" alt="Company Logo" class="logo">
-            <h1>Welcome to WorkMadeEasy</h1>
+            <h1>Welcome to WorkMadeEasy Inc.</h1>
             <div class="login-box">
                 <input type="text" id="username" class="form-control" placeholder="Username">
                 <input type="password" id="password" class="form-control" placeholder="Password">
@@ -102,37 +129,138 @@
             </div>
         </div>
 
-        <!-- Admin Dashboard -->
+       
         <div id="adminDashboard" class="page">
             <h2>Admin Dashboard</h2>
             <button class="btn btn-danger mb-3" onclick="logout()">Logout</button>
             <div class="task-section">
                 <h3>Task Management</h3>
                 <input type="text" id="taskInput" class="form-control mb-2" placeholder="Enter a new task">
+                <input type="date" id="taskDeadline" class="form-control mb-2" placeholder="Task Deadline">
                 <button class="btn btn-success" onclick="addTask()">Add Task</button>
                 <ul id="taskList" class="mt-3"></ul>
             </div>
+            <div class="calendar">
+                <h3>Task Calendar</h3>
+                <table id="taskCalendar" class="table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Calendar rows will be dynamically generated -->
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <!-- Employee Dashboard -->
-        <div id="employeeDashboard" class="page">
-            <h2>Employee Dashboard</h2>
+        <!-- Team Dashboards -->
+        <div id="realMadridDashboard" class="page">
+            <h2>Real Madrid Dashboard</h2>
             <button class="btn btn-danger mb-3" onclick="logout()">Logout</button>
             <div class="task-section">
                 <h3>Your Tasks</h3>
-                <ul id="employeeTaskList"></ul>
+                <ul id="realMadridTaskList"></ul>
+            </div>
+            <div class="calendar">
+                <h3>Task Calendar</h3>
+                <table id="realMadridTaskCalendar" class="table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="barcelonaDashboard" class="page">
+            <h2>Barcelona Dashboard</h2>
+            <button class="btn btn-danger mb-3" onclick="logout()">Logout</button>
+            <div class="task-section">
+                <h3>Your Tasks</h3>
+                <ul id="barcelonaTaskList"></ul>
+            </div>
+            <div class="calendar">
+                <h3>Task Calendar</h3>
+                <table id="barcelonaTaskCalendar" class="table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="bayernMunichDashboard" class="page">
+            <h2>Bayern Munich Dashboard</h2>
+            <button class="btn btn-danger mb-3" onclick="logout()">Logout</button>
+            <div class="task-section">
+                <h3>Your Tasks</h3>
+                <ul id="bayernMunichTaskList"></ul>
+            </div>
+            <div class="calendar">
+                <h3>Task Calendar</h3>
+                <table id="bayernMunichTaskCalendar" class="table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="juventusDashboard" class="page">
+            <h2>Juventus Dashboard</h2>
+            <button class="btn btn-danger mb-3" onclick="logout()">Logout</button>
+            <div class="task-section">
+                <h3>Your Tasks</h3>
+                <ul id="juventusTaskList"></ul>
+            </div>
+            <div class="calendar">
+                <h3>Task Calendar</h3>
+                <table id="juventusTaskCalendar" class="table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Simulating a local database
+       
         const users = {
             admin: { password: 'AVC@123', role: 'admin' },
-            employee: { password: 'AVC@2310', role: 'employee' }
+            realMadrid: { password: 'Real123', role: 'realMadrid' },
+            barcelona: { password: 'Barca123', role: 'barcelona' },
+            bayernMunich: { password: 'Bayern123', role: 'bayernMunich' },
+            juventus: { password: 'Juve123', role: 'juventus' }
         };
 
         const tasks = [];
@@ -142,17 +270,22 @@
             const password = document.getElementById('password').value;
 
             if (users[username] && users[username].password === password) {
-                // Clear login error
+                
                 document.getElementById('loginError').innerText = '';
 
                 if (users[username].role === 'admin') {
                     showPage('adminDashboard');
-                } else if (users[username].role === 'employee') {
-                    showPage('employeeDashboard');
-                    renderEmployeeTasks();
+                } else if (users[username].role === 'realMadrid') {
+                    showPage('realMadridDashboard');
+                } else if (users[username].role === 'barcelona') {
+                    showPage('barcelonaDashboard');
+                } else if (users[username].role === 'bayernMunich') {
+                    showPage('bayernMunichDashboard');
+                } else if (users[username].role === 'juventus') {
+                    showPage('juventusDashboard');
                 }
             } else {
-                document.getElementById('loginError').innerText = 'Invalid credentials!';
+                document.getElementById('loginError').innerText = 'Invalid username or password';
             }
         }
 
@@ -161,59 +294,54 @@
         }
 
         function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
         }
 
         function addTask() {
             const taskInput = document.getElementById('taskInput').value;
-            if (taskInput) {
-                tasks.push({ task: taskInput, completed: false });
-                document.getElementById('taskInput').value = '';
-                renderAdminTasks();
-                renderEmployeeTasks();
+            const taskDeadline = document.getElementById('taskDeadline').value;
+            if (taskInput && taskDeadline) {
+                tasks.push({ task: taskInput, deadline: taskDeadline, completed: false });
+                updateTaskList();
+                updateCalendar();
             }
         }
 
-        function renderAdminTasks() {
+        function updateTaskList() {
             const taskList = document.getElementById('taskList');
             taskList.innerHTML = '';
             tasks.forEach((task, index) => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    ${task.task} 
-                    <button class="btn btn-danger btn-sm float-end" onclick="deleteTask(${index})">Delete</button>
-                `;
-                taskList.appendChild(li);
+                const taskItem = document.createElement('li');
+                taskItem.className = task.completed ? 'complete' : '';
+                taskItem.innerText = `${task.task} (Deadline: ${task.deadline})`;
+                taskItem.onclick = () => toggleTaskCompletion(index);
+                taskList.appendChild(taskItem);
             });
         }
 
-        function renderEmployeeTasks() {
-            const taskList = document.getElementById('employeeTaskList');
-            taskList.innerHTML = '';
-            tasks.forEach((task, index) => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <span class="${task.completed ? 'complete' : ''}">${task.task}</span>
-                    <button class="btn btn-success btn-sm float-end" onclick="markComplete(${index})">Complete</button>
-                `;
-                taskList.appendChild(li);
+        function toggleTaskCompletion(index) {
+            tasks[index].completed = !tasks[index].completed;
+            updateTaskList();
+        }
+
+        function updateCalendar() {
+            const taskCalendarBody = document.querySelector('#taskCalendar tbody');
+            taskCalendarBody.innerHTML = '';
+            tasks.forEach(task => {
+                const row = document.createElement('tr');
+                const dayCell = document.createElement('td');
+                const taskCell = document.createElement('td');
+                dayCell.innerText = task.deadline;
+                taskCell.innerText = task.task;
+                row.appendChild(dayCell);
+                row.appendChild(taskCell);
+                taskCalendarBody.appendChild(row);
             });
-        }
-
-        function deleteTask(index) {
-            tasks.splice(index, 1);
-            renderAdminTasks();
-            renderEmployeeTasks();
-        }
-
-        function markComplete(index) {
-            tasks[index].completed = true;
-            renderEmployeeTasks();
         }
     </script>
+
 </body>
 
 </html>
